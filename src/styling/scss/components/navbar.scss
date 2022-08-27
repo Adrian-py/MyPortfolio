@@ -1,0 +1,155 @@
+@use "../utils/breakpoints.scss" as *;
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2rem 6.944vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+
+  @include breakpoint("tablet") {
+    padding: 2rem 5vw;
+  }
+
+  @include breakpoint("phone") {
+    padding: 2rem 9.167vw;
+  }
+}
+
+.nav-logo {
+  width: 4vw;
+
+  @include breakpoint("tablet") {
+    width: 6vw;
+  }
+
+  @include breakpoint("tablet") {
+    width: 10vw;
+  }
+}
+
+.nav-menu {
+  display: none;
+  transition: transform 150ms ease-in-out;
+
+  @include breakpoint("phone") {
+    display: block;
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  transition: all 750ms ease-in-out;
+
+  @include breakpoint("phone") {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10vh;
+    background: rgba(var(--light), 0.85);
+  }
+
+  &__link {
+    padding: 0.1rem 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    list-style: none;
+    transition: background 150ms ease-in-out;
+
+    & a {
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--dark);
+      text-decoration: none;
+
+      @include breakpoint("SDesktop") {
+        font-size: 1.5rem;
+      }
+
+      @include breakpoint("phone") {
+        font-weight: 700;
+      }
+    }
+
+    &:hover {
+      background: rgba(var(--dark), 0.05);
+    }
+
+    &--contact {
+      padding: 1rem 1.667vw;
+      background: rgba(var(--darkBlue));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      box-shadow: var(--boxShadow);
+      transition: transform 150ms ease-in-out;
+
+      @include breakpoint("tablet") {
+        padding: 1rem 2.5vw;
+      }
+
+      @include breakpoint("phone") {
+        padding: 1rem 5vw;
+      }
+
+      & a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: rgba(var(--light));
+
+        @include breakpoint("SDesktop") {
+          font-size: 1.25rem;
+        }
+      }
+
+      &:hover {
+        background: rgba(var(--darkBlue));
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &--show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__close {
+    display: none;
+    transition: transform 150ms ease-in-out;
+
+    @include breakpoint("phone") {
+      width: 8vw;
+      display: block;
+      position: absolute;
+      top: 10vh;
+      left: 10vw;
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+}

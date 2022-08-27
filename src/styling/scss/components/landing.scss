@@ -1,0 +1,184 @@
+@use "../utils/breakpoints.scss" as *;
+
+.landing {
+  position: relative;
+  width: 100%;
+  padding: 10vh 6.94vw;
+  padding-top: 24vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+
+  @include breakpoint("tablet") {
+    padding: 10vh 5vw;
+    padding-top: 18vh;
+  }
+
+  @include breakpoint("phone") {
+    height: 100vh;
+    padding: 0 9.167vw;
+    align-items: center;
+  }
+
+  &__image {
+    height: 70vh;
+    transition: transform 500ms ease-in-out;
+
+    @include breakpoint("SDesktop") {
+      height: 60vh;
+    }
+
+    @include breakpoint("tablet") {
+      height: 40vh;
+    }
+
+    @include breakpoint("phone") {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
+}
+
+.greeting {
+  max-width: 50vw;
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: column;
+  color: rgba(var(--dark));
+
+  @include breakpoint("phone") {
+    max-width: none;
+    width: 100%;
+  }
+
+  &__hero {
+    font-size: 6.075rem;
+
+    @include breakpoint("MDesktop") {
+      font-size: 5.5rem;
+    }
+
+    @include breakpoint("SDesktop") {
+      font-size: 4.25rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 3.25rem;
+    }
+
+    @include breakpoint("phone") {
+      font-size: 2.75rem;
+    }
+  }
+
+  &__desc {
+    font-size: 1.75rem;
+    text-align: justify;
+
+    @include breakpoint("MDesktop") {
+      font-size: 1.5rem;
+    }
+
+    @include breakpoint("SDesktop") {
+      font-size: 1.25rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 1rem;
+    }
+  }
+
+  &__more {
+    font-size: 2rem;
+    font-weight: 700;
+
+    @include breakpoint("MDesktop") {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint("SDesktop") {
+      font-size: 1.4rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.projects-link {
+  padding: 1rem 1.67vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 1.389vw;
+  align-self: flex-start;
+  border-radius: 20px;
+  background: rgba(var(--darkBlue));
+  box-shadow: var(--boxShadow);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+
+  @include breakpoint("tablet") {
+    padding: 1rem 2.5vw;
+  }
+
+  @include breakpoint("phone") {
+    padding: 1rem 5vw;
+    gap: 3vw;
+  }
+
+  &__icon {
+    width: 3vw;
+
+    @include breakpoint("phone") {
+      width: 6vw;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: rgba(var(--light));
+
+    @include breakpoint("SDesktop") {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 1.25rem;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  &__right-box {
+    position: absolute;
+    right: 0;
+    width: 23.61vw;
+    height: 100%;
+    background: rgba(var(--lightBlue));
+
+    @include breakpoint("phone") {
+      display: none;
+    }
+  }
+}

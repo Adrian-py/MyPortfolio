@@ -1,0 +1,217 @@
+@use "../utils/breakpoints.scss" as *;
+
+.about {
+  color: rgba(var(--light));
+}
+
+.introduction {
+  padding: 20vh 6.94vw 45vh 6.94vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(var(--darkBlue));
+
+  @include breakpoint("SDesktop") {
+    padding-top: 10vh;
+  }
+
+  @include breakpoint("phone") {
+    padding-left: 9.167vw;
+    padding-right: 9.167vw;
+  }
+
+  &__content {
+    max-width: 60%;
+
+    @include breakpoint("phone") {
+      width: 100%;
+      max-width: none;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.75rem;
+    font-size: 7rem;
+
+    @include breakpoint("LDesktop") {
+      font-size: 6.075rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 4.75rem;
+    }
+
+    @include breakpoint("phone") {
+      margin-bottom: 1.5rem;
+      font-size: 4.25rem;
+    }
+  }
+
+  &__text {
+    font-size: 2.15rem;
+    text-align: justify;
+
+    @include breakpoint("LDesktop") {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 1.4rem;
+    }
+
+    @include breakpoint("phone") {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+  }
+
+  &__illustration {
+    height: 20vw;
+    aspect-ratio: 1/1;
+
+    @include breakpoint("tablet") {
+      height: 25vw;
+    }
+
+    @include breakpoint("phone") {
+      display: none;
+    }
+  }
+}
+
+.skills {
+  position: relative;
+  top: -36vh;
+  padding: 0 6.94vw;
+
+  &__title {
+    margin-bottom: 2rem;
+    font-size: 3.75rem;
+
+    @include breakpoint("tablet") {
+      font-size: 3rem;
+    }
+
+    @include breakpoint("phone") {
+      margin-bottom: 1.5rem;
+      font-size: 2.75rem;
+    }
+  }
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4.167vw;
+
+  @include breakpoint("SDesktop") {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  @include breakpoint("tablet") {
+    padding: 0 8vw;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4vh;
+  }
+
+  @include breakpoint("phone") {
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__card {
+    height: 100%;
+    aspect-ratio: 1/1.25;
+    padding: 12% 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: rgba(var(--light));
+    color: rgba(var(--dark));
+    border-radius: 20px;
+    box-shadow: var(--boxShadow);
+    transition: transform 250ms ease-in-out;
+    cursor: pointer;
+
+    @include breakpoint("tablet") {
+      aspect-ratio: auto;
+      gap: 1.25rem;
+    }
+
+    @include breakpoint("phone") {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
+}
+
+.card {
+  &__image {
+    width: 22.22%;
+
+    @include breakpoint("tablet") {
+      width: 15%;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+
+    @include breakpoint("LDesktop") {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint("SDesktop") {
+      font-size: 1.5rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 2.25rem;
+    }
+
+    @include breakpoint("phone") {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__list {
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 1.75rem;
+
+    @include breakpoint("LDesktop") {
+      font-size: 1.5rem;
+    }
+
+    @include breakpoint("SDesktop") {
+      font-size: 1.1rem;
+    }
+
+    @include breakpoint("tablet") {
+      font-size: 1.6rem;
+    }
+
+    @include breakpoint("phone") {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.list__item {
+  list-style: none;
+}
